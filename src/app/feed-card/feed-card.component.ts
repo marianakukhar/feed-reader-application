@@ -28,4 +28,9 @@ export class FeedCardComponent implements OnInit {
             error => console.log(error));
   }
 
+  onClickFeed($event) {
+    $event.path[2].style.display = 'none'
+    console.log(event)
+  }
+
 }
