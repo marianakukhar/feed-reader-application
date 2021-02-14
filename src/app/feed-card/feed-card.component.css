@@ -5,3 +5,9 @@
 mat-card {
   cursor: pointer;
 }
+
+.add-article {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

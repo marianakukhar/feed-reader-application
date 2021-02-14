@@ -1,23 +1,32 @@
 <mat-card>
   <mat-card-title>Sign in</mat-card-title>
 <mat-card-content>
-<form>
+<form [formGroup] = "form"
+(ngSubmit) = "onSubmit()">
 <p>
   <mat-form-field>
-    <input type="text" matInput placeholder="Username*" formControlName="username">
+    <input type="text" matInput placeholder="Username*" formControlName="email">
   </mat-form-field>
+  <span class="helper-text error" *ngIf = "form.get('email').invalid && form.get('email').touched">Username must contain 4 charachters</span>
 </p>
 
 <p>
   <mat-form-field>
     <input type="password" matInput placeholder="Password*" formControlName="password">
   </mat-form-field>
+  <span class="helper-text error" *ngIf = "form.get('password').invalid && form.get('password').touched">Password must contain 8 charachters</span>
 </p>
 
 <div class="button">
-  <button type="submit" mat-raised-button color="primary" (click) = "onSubmit()" >Enter account</button>
+  <button type="submit" mat-raised-button color="primary" [disabled] = "form.invalid">Enter account</button>
 </div>
 
 </form>
 </mat-card-content>
 </mat-card>
+
+<div class="feed-table" >
+  <div #myTestDiv feedUrl="https://google.com"><app-feed-card (click) = "onSubmit()"></app-feed-card></div>
+  <app-feed-card  #myTestDiv1 feedUrl="https://vk.com" (click) = "onSubmit()"></app-feed-card>
+  <app-feed-card #myTestDiv2 feedUrl="https://payproglobal.com" (click) = "onSubmit()"></app-feed-card>
+</div>

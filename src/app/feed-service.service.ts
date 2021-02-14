@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { Feed } from './model/feed';
 import { map } from 'rxjs/operators'; 
-import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class FeedService {
@@ -21,7 +20,7 @@ export class FeedService {
   }
 
   private extractFeeds(res: Response): any {
-    return res|| { };
+    return res || { };
   }
 
   private handleError (error: any) {

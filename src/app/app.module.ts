@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
+import { Routes, RouterModule } from '@angular/router';
 
-import {Routes, RouterModule} from '@angular/router';
+import { MatButtonModule} from '@angular/material/button';
+import { MatCardModule} from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
-import { MatButtonModule} from '@angular/material/button';
-import { MatCardModule} from '@angular/material/card';
-import { MatIconModule, MatToolbarModule } from '@angular/material';
 import { FeedCardComponent } from './feed-card/feed-card.component';
-import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
 import { FeedService } from './feed-service.service';
-import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
-import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddingFeedComponent } from './adding-feed/adding-feed.component';
 
 const appRoutes: Routes =[
   { path: '', component: SignInComponent},
@@ -28,17 +29,18 @@ const appRoutes: Routes =[
     HeaderComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
+    AddingFeedComponent,
   ],
   imports: [
     BrowserModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule,
-    MatToolbarModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
 ],
   providers: [FeedService, HttpClient],
   bootstrap: [AppComponent]

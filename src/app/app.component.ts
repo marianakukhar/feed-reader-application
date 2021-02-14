@@ -17,13 +17,6 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.refreshFeed();
   }
 
-  refreshFeed() {
-    this.feedService.getFeedContent(this.feedUrl)
-        .subscribe(
-            feed => this.feeds = feed.items,
-            error => console.log(error));
-  }
 }

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-
-
+import { Component, OnInit, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,13 +9,19 @@ import {Router} from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
+  form: FormGroup;
+
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.form = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+    })
   }
 
-  onSubmit() {
+  onSubmit() { 
     this.router.navigate(['feed-card']);
-  }
-
+    //console.log(this.nameParagraph.nativeElement.attributes[1].nodeValue);
+    }
 }

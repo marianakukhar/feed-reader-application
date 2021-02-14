@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ContentChildren, QueryList } from '@angular/core';
 import { FeedService } from '../feed-service.service';
+import {SignInComponent} from '../sign-in/sign-in.component'
 
 @Component({
   selector: 'app-feed-card',
@@ -9,8 +10,10 @@ import { FeedService } from '../feed-service.service';
 export class FeedCardComponent implements OnInit {
 
   @Input() feed: any;
-
+  
   private feedUrl: string = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+  // https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
+  // https://www.yahoo.com/news/rss/world
   feeds: any;
   
   constructor(
