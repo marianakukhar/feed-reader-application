@@ -15,7 +15,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HeaderComponent } from './header/header.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
 import { FeedService } from './feed-service.service';
-import { AddingFeedComponent } from './adding-feed/adding-feed.component';
 
 const appRoutes: Routes =[
   { path: '', component: SignInComponent},
@@ -29,7 +28,6 @@ const appRoutes: Routes =[
     HeaderComponent,
     FeedCardComponent,
     StripHtmlTagsPipe,
-    AddingFeedComponent,
   ],
   imports: [
     BrowserModule,
