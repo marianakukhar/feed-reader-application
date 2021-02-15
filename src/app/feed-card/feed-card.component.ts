@@ -9,16 +9,18 @@ import {SignInComponent} from '../sign-in/sign-in.component'
 })
 export class FeedCardComponent implements OnInit {
 
+  @Input() feedUrl: string;
   @Input() feed: any;
   
-  private feedUrl: string = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
-  // https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
-  // https://www.yahoo.com/news/rss/world
   feeds: any;
   
   constructor(
     private feedService: FeedService
   ) { }
+
+  getUrl(url) {
+    this.feedUrl = url;
+  }
 
   ngOnInit() {
     this.refreshFeed();
@@ -32,8 +34,7 @@ export class FeedCardComponent implements OnInit {
   }
 
   onClickFeed($event) {
-    $event.path[2].style.display = 'none'
-    console.log(event)
+    $event.path[2].style.display = 'none';
   }
 
 }

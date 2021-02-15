@@ -26,7 +26,7 @@
 </mat-card>
 
 <div class="feed-table" >
-  <div #myTestDiv feedUrl="https://google.com"><app-feed-card (click) = "onSubmit()"></app-feed-card></div>
-  <app-feed-card  #myTestDiv1 feedUrl="https://vk.com" (click) = "onSubmit()"></app-feed-card>
-  <app-feed-card #myTestDiv2 feedUrl="https://payproglobal.com" (click) = "onSubmit()"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.nasa.gov/rss/dyn/breaking_news.rss" (click) = "onSubmit()"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.yahoo.com/news/rss/world" (click) = "onSubmit()"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml" (click) = "onSubmit()"></app-feed-card>
 </div>
