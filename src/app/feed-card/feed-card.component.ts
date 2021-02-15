@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedCardComponent implements OnInit {
 
-  @Input() feedUrl: string;
+  @Input() feedUrl: string = "https://www.nasa.gov/rss/dyn/breaking_news.rss";
   @Input() feed: any;
 
   feeds: any;

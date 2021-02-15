@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FeedService } from '../feed-service.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,9 +9,10 @@ import { FeedService } from '../feed-service.service';
 })
 export class SignInComponent implements OnInit {
 
+  @ViewChild('feed') feed;
   form: FormGroup;
 
-  constructor(private router: Router, private feedUrl: FeedService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -22,6 +22,10 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() { 
+    this.router.navigate(['feed-card']);
+  }
+
+  onClickFeedItem() {
     this.router.navigate(['feed-card']);
   }
 

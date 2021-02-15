@@ -26,7 +26,7 @@
 </mat-card>
 
 <div class="feed-table" >
-  <app-feed-card feedUrl = "https://www.nasa.gov/rss/dyn/breaking_news.rss"></app-feed-card>
-  <app-feed-card feedUrl = "https://www.yahoo.com/news/rss/world"></app-feed-card>
-  <app-feed-card feedUrl = "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.nasa.gov/rss/dyn/breaking_news.rss" (click) = "onClickFeedItem()"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.yahoo.com/news/rss/world" (click) = "onClickFeedItem()"></app-feed-card>
+  <app-feed-card feedUrl = "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml" (click) = "onClickFeedItem()"></app-feed-card>
 </div>
