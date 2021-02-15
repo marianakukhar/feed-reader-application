@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ViewChildren, ElementRef, QueryList, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FeedService } from '../feed-service.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,10 +10,9 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  @Input() feedUrl: string;
   form: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private feedUrl: FeedService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -23,6 +23,6 @@ export class SignInComponent implements OnInit {
 
   onSubmit() { 
     this.router.navigate(['feed-card']);
-    //console.log(this.nameParagraph.nativeElement.attributes[1].nodeValue);
-    }
+  }
+
 }

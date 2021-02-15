@@ -1,7 +1,5 @@
-<div class="feed-card-wrapper">
-  <mat-card class="card-feed-entry" *ngFor="let feed of feeds" [feed]="feed">
+ <mat-card class="card-feed-entry" *ngFor="let feed of feeds" [feed]="feed">
     <mat-card-title>{{feed.title}}</mat-card-title>
     <mat-card-subtitle>{{feed.author}} {{feed.pubDate | date:'dd-MM-yyyy'}}</mat-card-subtitle>
     <!-- <mat-card-content>{{feed.description}}</mat-card-content> -->
-  </mat-card>
-</div>
+ </mat-card>

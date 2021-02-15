@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class FeedService {
 
+  providedIn: 'root';
   private rssToJsonServiceBaseUrl: string = 'https://rss2json.com/api.json?rss_url=';
 
   constructor(
